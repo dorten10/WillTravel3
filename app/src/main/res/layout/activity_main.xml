@@ -12,7 +12,13 @@
     android:layout_height="match_parent" >
 
 
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="ברוך הבא לאפליקציית פנקס חיסונים. בחר את המדינות אליהן תיסע\n"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <ListView
 
@@ -20,25 +26,19 @@
         android:id="@android:id/list"
 
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
 
 
-        android:layout_height="wrap_content"
-
-
-        android:layout_centerHorizontal="true"
-
-
-        android:layout_centerVertical="true"
+        android:layout_height="match_parent"
 
 
         android:layout_above="@+id/btnShowCheckedItems"
 
 
-        />
-
-
-
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/background_light"
+        android:divider="@android:color/holo_blue_dark" />
 
 
     <Button
@@ -47,7 +47,7 @@
         android:id="@+id/btnShowCheckedItems"
 
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
 
 
         android:layout_height="wrap_content"
@@ -59,10 +59,10 @@
         android:layout_centerHorizontal="true"
 
 
-        android:text="Show"
+        android:background="@android:color/holo_blue_light"
 
 
-        />
+        android:text="תראו לי את החיסונים" />
 
 
 

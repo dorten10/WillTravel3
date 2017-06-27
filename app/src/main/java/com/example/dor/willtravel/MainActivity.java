@@ -1,5 +1,6 @@
 package com.example.dor.willtravel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
@@ -12,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
+import android.os.Parcelable;
 import android.util.Log;
 
 
@@ -105,19 +107,21 @@ public class MainActivity extends Activity implements OnClickListener {
         mCountrys = new ArrayList<Country>();
 
         String[] arr= {"חצבת","שפעת"};
+        String[] arr2= {"אבולה","סרטן תחת קקי שורף","אדמת"};
+        String[] arr3= {"קדחת הנילוס","צרעת"};
         mCountrys.add(new Country("ארגנטינה",arr));
 
 
-        mCountrys.add(new Country("מקסיקו",arr));
+        mCountrys.add(new Country("מקסיקו",arr2));
 
 
-        mCountrys.add(new Country("בוליביה",arr));
+        mCountrys.add(new Country("בוליביה",arr3));
 
 
         mCountrys.add(new Country("פרו",arr));
 
 
-        mCountrys.add(new Country("ברזיל",arr));
+        mCountrys.add(new Country("ברזיל",arr2));
 
 
 
@@ -172,10 +176,16 @@ public class MainActivity extends Activity implements OnClickListener {
             Log.d(MainActivity.class.getSimpleName(), "Selected Items: " + mArrayCountrys.toString());
 
 
-            Toast.makeText(getApplicationContext(), "Selected Items: " + mArrayCountrys.toString(), Toast.LENGTH_LONG).show();
+          // Toast.makeText(getApplicationContext(), "Selected Items: " + mArrayCountrys.toString(), Toast.LENGTH_LONG).show();
             Intent intent=new Intent(this,VaccineListActivity.class);
+            Log.d(MainActivity.class.getSimpleName(), " 1");
+            Bundle bundle = new Bundle();
+            Log.d(MainActivity.class.getSimpleName(), " 2");
+            bundle.putParcelableArrayList("Countries", mArrayCountrys);
+            Log.d(MainActivity.class.getSimpleName(), " 3");
+            intent.putExtras(bundle);
+            Log.d(MainActivity.class.getSimpleName(), " 4");
             startActivity(intent);
-
 
         }
 
